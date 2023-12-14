@@ -23,35 +23,15 @@ namespace CursZD
             InitializeComponent();
         }
 
-        private void SetupDialog_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
         }
 
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
+        
 
-        }
-
-        private void ECBButton1_CheckedChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void ExecuteButton_Click(object sender, EventArgs e)
         {
@@ -92,10 +72,6 @@ namespace CursZD
             }
         }
 
-        private void KeyLengthTextBox_TextChanged(object sender, EventArgs e)
-        {
-
-        }
 
         private void SetupDialog_FormClosing(object sender, FormClosingEventArgs e)
         {

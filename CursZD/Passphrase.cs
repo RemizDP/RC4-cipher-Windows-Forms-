@@ -81,19 +81,6 @@ namespace CursZD
                     cipher = true;
                 }
 
-                /*if (setupWnd.ECBButton1 != null)
-                {
-                    cipherMode = 1; 
-                }
-                else if(setupWnd.CBCButton2 != null)
-                {
-                    cipherMode = 2;
-                }
-                else if (setupWnd.CFBButton3 != null)
-                {
-                    cipherMode = 3;
-                }//*/
-
                 if (setupWnd.LatinLowCheckBox.Checked) 
                 {
                     check1 = setupWnd.mainWnd.PassCheck(PasswordBox1.Text, MainForm.LatinLow);
@@ -138,10 +125,25 @@ namespace CursZD
                     System.Security.Cryptography.MD5 md5 = System.Security.Cryptography.MD5.Create();
                     byte[] hash = md5.ComputeHash(Encoding.UTF8.GetBytes(PasswordBox1.Text));
                     Buffer.BlockCopy(hash, 0, key, 0, key.Length);
+
                     byte [] result = RC4.Apply(data, key, cipher, ref checkResult);
-                    if (!checkResult)
+                    if (setupWnd.checkBox1.Checked)
                     {
-                        MessageBox.Show("При дешифровании была использована другая длина ключа, длина блока или парольная фраза", "!!!");
+                        if (!checkResult)
+                        {
+                            MessageBox.Show("При дешифровании была использована другая длина ключа или парольная фраза", "!!!");
+                        }
+                        else
+                        {
+                            Result res = new Result();
+                            res.MdiParent = setupWnd.mainWnd;
+                            res.Show();
+                            res.mainWnd = setupWnd.mainWnd;
+                            res.resultData = result;
+                            filedata = result;
+                            setupWnd.Close();
+                            this.Close();
+                        }
                     }
                     else
                     {
@@ -182,19 +184,6 @@ namespace CursZD
                 {
                     cipher = true;
                 }
-
-                /*if (inputWnd.ECBButton1 != null)
-                {
-                    cipherMode = 1;
-                }
-                else if (inputWnd.CBCButton2 != null)
-                {
-                    cipherMode = 2;
-                }
-                else if (inputWnd.CFBButton3 != null)
-                {
-                    cipherMode = 3;
-                }//*/
 
                 if (inputWnd.LatinLowCheckBox.Checked)
                 {
@@ -245,9 +234,24 @@ namespace CursZD
                     byte[] hash = md5.ComputeHash(Encoding.UTF8.GetBytes(PasswordBox1.Text));
                     Buffer.BlockCopy(hash, 0, key, 0, key.Length);
                     byte[] result = RC4.Apply(data, key, cipher, ref checkResult);
-                    if (!checkResult)
+
+                    if (inputWnd.checkBox1.Checked)
                     {
-                        MessageBox.Show("При дешифровании была использована другая длина ключа, длина блока или парольная фраза", "!!!");
+                        if (!checkResult)
+                        {
+                            MessageBox.Show("При дешифровании была использована другая длина ключа или парольная фраза", "!!!");
+                        }
+                        else
+                        {
+                            ResultText res = new ResultText();
+                            res.resultData = result;
+                            messagedata = result;
+                            res.MdiParent = inputWnd.mainWnd;
+                            res.Show();
+                            res.mainWnd = inputWnd.mainWnd;
+                            inputWnd.Close();
+                            this.Close();
+                        }
                     }
                     else
                     {

@@ -70,7 +70,6 @@
             this.SpecialCheckBox.TabIndex = 4;
             this.SpecialCheckBox.Text = "Спецсимволы (.,?!@#$%&)";
             this.SpecialCheckBox.UseVisualStyleBackColor = true;
-            this.SpecialCheckBox.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // NumsCheckBox
             // 
@@ -101,7 +100,6 @@
             this.LatinLowCheckBox.TabIndex = 0;
             this.LatinLowCheckBox.Text = "Латинские буквы нижнего регистра";
             this.LatinLowCheckBox.UseVisualStyleBackColor = true;
-            this.LatinLowCheckBox.CheckedChanged += new System.EventHandler(this.checkBox2_CheckedChanged);
             // 
             // CancelButton
             // 
@@ -132,7 +130,6 @@
             this.KeyLengthTextBox.Name = "KeyLengthTextBox";
             this.KeyLengthTextBox.Size = new System.Drawing.Size(60, 26);
             this.KeyLengthTextBox.TabIndex = 32;
-            this.KeyLengthTextBox.TextChanged += new System.EventHandler(this.KeyLengthTextBox_TextChanged);
             // 
             // label3
             // 
@@ -151,7 +148,6 @@
             this.MinPasswordPhrazeLengthTextBox.Name = "MinPasswordPhrazeLengthTextBox";
             this.MinPasswordPhrazeLengthTextBox.Size = new System.Drawing.Size(59, 26);
             this.MinPasswordPhrazeLengthTextBox.TabIndex = 30;
-            this.MinPasswordPhrazeLengthTextBox.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label4
             // 
@@ -225,7 +221,6 @@
             this.Name = "SetupDialog";
             this.Text = "Выбор режима";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.SetupDialog_FormClosing);
-            this.Load += new System.EventHandler(this.SetupDialog_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);

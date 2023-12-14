@@ -85,12 +85,12 @@ namespace CursZD
                     Buffer.BlockCopy(result, check1.Length, buf, 0, i);
                 else
                 {
-                    check = true;
+                    //check = true;
                     Buffer.BlockCopy(result, 0, buf, 0, i);
                 }
                 return buf;
             }
-            check = true;
+            //check = true;
             return result;
         }
         
